@@ -17,7 +17,7 @@ class Dashboard extends Component {
   state = {
     checkedA: true,
     sliderValue: 1,
-    quality: "",
+    quality: 1,
     messages: []
   };
   handleQuality = (event, value) => {
@@ -27,7 +27,8 @@ class Dashboard extends Component {
     this.setState({
       quality: event.target.value
     });
-    if ((this.quality = "Low")) {
+
+    if (this.state.quality == 1) {
       if (this.state.messages[messages.length - 1] != text) {
         messages.push(text);
       }
@@ -142,7 +143,7 @@ class Dashboard extends Component {
                 valueLabelDisplay="auto"
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
-                value={this.state.quality}
+                value={this.quality}
                 onChange={this.handleQuality}
               >
                 <MenuItem value={1}>Low</MenuItem>
